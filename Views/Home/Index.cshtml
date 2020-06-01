@@ -15,8 +15,9 @@
         <button asp-controller="Students" asp-action="students">Show students</button><br><br>
         <button asp-controller="Students" asp-action="dodaj">Add a student</button><input type="text" name="imie_wpis"><input type="text" name="nazwisko_wpis"><input type="text" name="szkola_wpis"><br><br>
         <button asp-controller="Students" asp-action="usun">Delete a student</button><input type="text" name="numer"><br><br>
-        @**name="students1" value="students2" *@
+        @* name="students1" value="students2" *@
+        <button asp-controller="Database" asp-action="adddatabase">Add a database</button><input type="text" name="name_wpis"><input type="text" name="engine_wpis"><br><br>
+        @* adddatabase(string name_wpis, string engine_wpis) *@
     </form>
 
-    </div>
-    
+        </div>

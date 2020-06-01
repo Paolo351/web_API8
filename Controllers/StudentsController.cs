@@ -53,7 +53,7 @@ namespace web_API8.Controllers
             //var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
             int nProcessID = Process.GetCurrentProcess().Id;
             short short_n = Convert.ToInt16(nProcessID);
-            var myObjectId = new ObjectId(DateTime.UtcNow, 2, short_n, 3);
+            var myObjectId = new ObjectId(DateTime.UtcNow, 2, short_n, 1);
             
 
 

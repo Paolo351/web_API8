@@ -9,8 +9,9 @@ namespace web_API8.Models
 {
     public class Database
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        //[BsonId]
+        //[BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId DatabaseId { get; set; }
         public string Name { get; set; }
 
         public string Engine { get; set; }
