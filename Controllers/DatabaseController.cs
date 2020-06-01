@@ -16,7 +16,9 @@ using web_API8.Services;
 
 namespace web_API8.Controllers
 {
-    [Route("api/[controller]")]
+    
+
+    [Route("api")]
     [ApiController]
     public class DatabaseController : Controller
     {
@@ -56,6 +58,13 @@ namespace web_API8.Controllers
 
             return View(viewModel);
 
+        }
+
+        [Route("powrot2")]
+        public IActionResult powrot2()
+        {
+
+            return Redirect("/");
         }
 
         // GET: api/<DatabaseController>

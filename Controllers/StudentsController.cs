@@ -26,6 +26,7 @@ namespace web_API8.Controllers
             _StudentService = Studentservice;
         }
 
+        [Route("powrot")]
         public IActionResult powrot()
         {
 
