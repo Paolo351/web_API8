@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -49,16 +50,36 @@ namespace web_API8.Controllers
         [Route("dodaj")]
         public IActionResult dodaj(string imie_wpis, string nazwisko_wpis, string szkola_wpis)
         {
-            //string imie = "Piotr"; string nazwisko = "Malinowski"; string szkola = "SGH";
+            //var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            int nProcessID = Process.GetCurrentProcess().Id;
+            short short_n = Convert.ToInt16(nProcessID);
+            var myObjectId = new ObjectId(DateTime.UtcNow, 2, short_n, 3);
+            
 
-            var document = new BsonDocument {{"FirstName", imie_wpis },{"LastName", nazwisko_wpis },{"School", szkola_wpis } };
+
+            var myObjectId_string = new string(myObjectId.ToString());
+            //string myObjectId_string = myObjectId.ToString();
+
+            //var string newObjectId = 5349b4ddd2781d08c09890f4
+            //var myObjectId = new ObjectId("5349b4ddd2781d08c09890f4");
+
+            //string myObjectId_string = myObjectId.ToString();
+
+            var document = new BsonDocument { 
+                                                { "_id", myObjectId }, 
+                                                { "FirstName", imie_wpis }, 
+                                                { "LastName", nazwisko_wpis }, 
+                                                { "School", szkola_wpis } 
+                                            };
+
+
             var client = new MongoClient(MongoDB_College.ConnectionString_College);
             var database = client.GetDatabase(MongoDB_College.bd_College);
             var collec = database.GetCollection<BsonDocument>(MongoDB_College.kolekcja_College);
 
             collec.InsertOneAsync(document);
 
-            var viewModel = new DodajViewModel(imie_wpis, nazwisko_wpis, szkola_wpis);
+            var viewModel = new DodajViewModel_mgen(myObjectId_string, imie_wpis, nazwisko_wpis, szkola_wpis);
 
             return View(viewModel);
             

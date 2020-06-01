@@ -3,7 +3,7 @@
 *@
 
 
-@model web_API8.ViewModels.DodajViewModel
+@model web_API8.ViewModels.DodajViewModel_mgen
 @{
     ViewData["Title"] = "Dodaj";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,7 +14,7 @@
     <ul>
           
         
-        <li>Name: @Model.FirstName, Last name: @Model.LastName, Department: @Model.Department</li>
+        <li>@Model.StudentId, Name: @Model.FirstName, Last name: @Model.LastName, Department: @Model.Department</li>
 
 
         
