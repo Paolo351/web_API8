@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    
+    <div class="text-left">
+
+        <h1 class="display-4">Hello!</h1>
+        @*
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <input type="submit" value="Students" />
+        }**@
+
+    <form>
+        <button asp-controller="Students" asp-action="students">Show students</button><br><br>
+        <button asp-controller="Students" asp-action="dodaj">Add a student</button><input type="text" name="imie_wpis"><input type="text" name="nazwisko_wpis"><input type="text" name="szkola_wpis"><br><br>
+        <button asp-controller="Students" asp-action="usun">Delete a student</button><input type="text" name="numer"><br><br>
+        @**name="students1" value="students2" *@
+    </form>
+
+    </div>
+    

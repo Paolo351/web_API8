@@ -1,0 +1,22 @@
+﻿@model web_API8.ViewModels.StudentsViewModel
+@{
+    ViewData["Title"] = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <div class="text-left">
+        <h1 class="display-4">Students: </h1>
+        <ul>
+            @foreach (var Student in Model.Students)
+            {
+                <li>@Student.StudentId, Name: @Student.FirstName, Last name: @Student.LastName, Department: @Student.Department</li>
+
+
+            }
+        </ul>
+        <form>
+            <button name="powrot" value="powrot" asp-action="powrot">Back to home page</button>
+        </form>
+    </div>

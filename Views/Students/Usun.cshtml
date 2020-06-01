@@ -1,0 +1,22 @@
+﻿
+@model web_API8.ViewModels.UsunViewModel
+@{
+    ViewData["Title"] = "Usun";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="text-left">
+    <h1 class="display-4">Student deleted: </h1>
+    <ul>
+
+
+        <li>@Model.pojedynczy_student.StudentId, Name: @Model.pojedynczy_student.FirstName, Last name: @Model.pojedynczy_student.LastName, Department: @Model.pojedynczy_student.Department</li>
+
+
+
+    </ul>
+    <form>
+        <button name="powrot" value="powrot" asp-action="powrot">Back to home page</button>
+    </form>
+</div>

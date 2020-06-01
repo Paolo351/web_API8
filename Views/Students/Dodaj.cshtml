@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@model web_API8.ViewModels.DodajViewModel
+@{
+    ViewData["Title"] = "Dodaj";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Student added: </h1>
+    <ul>
+          
+        
+        <li>Name: @Model.FirstName, Last name: @Model.LastName, Department: @Model.Department</li>
+
+
+        
+    </ul>
+    <form>
+        <button name="powrot" value="powrot" asp-action="powrot">Back to home page</button>
+    </form>
+</div>
